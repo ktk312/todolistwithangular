@@ -1,0 +1,54 @@
+<h3>Todo List</h3>
+<button *ngIf="" mat-raised-button color="warn" (click)="openDialog('0ms', '0ms')">Add Todo</button>  
+  <mat-grid-list *ngIf="taskList.length >0" cols="3" rowHeight="2:1">
+    
+    <mat-grid-tile>Name</mat-grid-tile>
+    <mat-grid-tile>Date</mat-grid-tile>
+    <mat-grid-tile>Actions</mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="3" *ngFor="let task of taskList; index as i;" rowHeight="4:1">
+
+    <mat-grid-tile>{{task.taskName}}</mat-grid-tile>
+    <mat-grid-tile>{{task.taskDate | date:'shortDate' }}</mat-grid-tile>
+    <mat-grid-tile>
+   
+      <div class="example-button-container" (click)="taskDone(i)" >
+        <button mat-mini-fab color="primary" aria-label="Example icon button with a filter list icon">
+          <mat-icon>check</mat-icon>
+        </button>
+      </div>
+
+ 
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="todobtn"  >
+    <button mat-raised-button color="warn" (click)="openDialog('0','0')" >Add Todo</button>
+  </div>
+
+<h3 >Completed List</h3>
+
+  <mat-grid-list *ngIf="completedList.length >0" cols="3" rowHeight="2:1">
+    
+    <mat-grid-tile>Name</mat-grid-tile>
+    <mat-grid-tile>Date</mat-grid-tile>
+    <mat-grid-tile>Actions</mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="3" *ngFor="let completedTask of completedList; index as i;" rowHeight="4:1">
+
+    <mat-grid-tile>{{completedTask.taskName}}</mat-grid-tile>
+    <mat-grid-tile>{{completedTask.taskDate | date:'shortDate' }}</mat-grid-tile>
+    <mat-grid-tile>
+   
+      <div class="example-button-container" (click)="deleteTask(i)" >
+        <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+
+ 
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+
+<router-outlet></router-outlet>

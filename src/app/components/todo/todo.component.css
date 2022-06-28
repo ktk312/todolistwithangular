@@ -1,0 +1,51 @@
+.todobtn{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.listitem{
+display: flex;
+/* flex: 1 2 auto; */
+flex-direction: row;
+justify-content: center;
+align-items: center;
+background-color: aqua;
+  }
+
+  .example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+    align-items: center;
+    text-align: center;
+    
+}
+
+p{
+    margin-right: 10;
+    margin-left: 10;
+    display: flex;
+    background-color: aqua;
+    padding: 10;
+}

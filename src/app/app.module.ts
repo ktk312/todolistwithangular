@@ -16,11 +16,24 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { HttpexampleComponent } from './components/httpexample/httpexample.component';
+import { RouterModule, Routes } from '@angular/router';
+import { TodoComponent } from './components/todo/todo.component';
+
+
+const routes:Routes =[
+  {path: '', component: TodoComponent },
+  {path: 'network' , component: HttpexampleComponent}
+
+
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogComponent
+    DialogComponent,
+    HttpexampleComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +47,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatDatepickerModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    MatGridListModule
-    
+    MatGridListModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]
