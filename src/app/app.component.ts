@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'todolistwithangular';
 
   taskList: Array<any>=[];
+  completedList: Array<any> =[];
 
   constructor(private dialog:MatDialog){}
 
@@ -33,7 +34,12 @@ export class AppComponent {
   }
 
   taskDone(i:number,  ){
+    this.completedList.push(this.taskList[i]);
     
     this.taskList.splice(i,1);
+  }
+
+  deleteTask(i:number){
+    this.completedList.splice(i,1);
   }
 }
