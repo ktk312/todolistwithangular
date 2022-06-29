@@ -1,2 +1,11 @@
-<p>httpexample works!</p>
+
+<div class="container">
+    <mat-selection-list  [routerLink]="['/network',userList.selectedOptions.selected[0]?.value.id]"  #userList [multiple]="false">
+    <mat-list-option class="card" *ngFor="let user of users" [value]="user">
+     <p>   {{user.name}}</p> <p> {{user.email}}</p>
+    </mat-list-option>
+  </mat-selection-list>
+
 <router-outlet></router-outlet>
+  
+</div>

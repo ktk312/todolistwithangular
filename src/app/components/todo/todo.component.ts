@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DialogComponent} from '../dialog/dialog.component';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-todo',
@@ -9,36 +9,36 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 })
 export class TodoComponent implements OnInit {
 
-  constructor(private dialog:MatDialog) { }
-  taskList: Array<any>=[];
-  completedList: Array<any> =[];
+  constructor(private dialog: MatDialog) { }
+  taskList: Array<any> = [];
+  completedList: Array<any> = [];
   ngOnInit(): void {
   }
 
-  taskDone(i:number,  ){
+  taskDone(i: number,) {
     this.completedList.push(this.taskList[i]);
-    
-    this.taskList.splice(i,1);
+
+    this.taskList.splice(i, 1);
   }
 
-  deleteTask(i:number){
-    this.completedList.splice(i,1);
+  deleteTask(i: number) {
+    this.completedList.splice(i, 1);
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    let dialogRef=  this.dialog.open(DialogComponent, {
-        width: '100%',
-        enterAnimationDuration,
-        exitAnimationDuration,
-      });
-      
-      dialogRef.afterClosed().subscribe(res=>{
-        if(res!=''){
+    let dialogRef = this.dialog.open(DialogComponent, {
+      width: '100%',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+
+    dialogRef.afterClosed().subscribe(res => {
+      if (res != '') {
         this.taskList.push(res);
         console.log(this.taskList);
-        }
-      });
-      
-    }
+      }
+    });
+
+  }
 
 }

@@ -1,0 +1,27 @@
+.example-card {
+    min-width: 400px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+  .details
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+
